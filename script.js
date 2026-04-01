@@ -14,8 +14,8 @@ L.marker([-34.6037, -58.3816])
    puntos.push([e.latlng.lat, e.latlng.lng]);
 
 
-   if (puntos.length === 2) {
-       L.polyline(puntos, { color: 'blue' }).addTo(map);
+   if (puntos.length === 3) {
+       L.polygon(puntos, { color: 'red' }).addTo(map);
    }
 });
 
