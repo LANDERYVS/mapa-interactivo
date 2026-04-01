@@ -11,5 +11,12 @@ L.marker([-34.6037, -58.3816])
    .openPopup();
 
    map.on('click', function(e) {
-   alert("Lat: " + e.latlng.lat + " Lng: " + e.latlng.lng);
+   puntos.push([e.latlng.lat, e.latlng.lng]);
+
+
+   if (puntos.length === 2) {
+       L.polyline(puntos, { color: 'blue' }).addTo(map);
+   }
 });
+
+let puntos = [];
