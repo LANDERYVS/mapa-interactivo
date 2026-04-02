@@ -6,6 +6,7 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 }).addTo(map);
 
 let puntos = [];
+let polygon;
 
 L.marker([-34.6037, -58.3816])
    .addTo(map)
@@ -13,10 +14,8 @@ L.marker([-34.6037, -58.3816])
    .openPopup();
 
    map.on('click', function(e) {
-   puntos.push([e.latlng.lat, e.latlng.lng]);
-
-
-    if (puntos.length === 3) {
-       L.polygon(puntos, { color: 'red' }).addTo(map);
-    }
+    puntos.push([e.latlng.lat, e.latlng.lng]);
+    L.polygon(puntos, {color: 'red'}).addTo(map);
 });
+
+function
